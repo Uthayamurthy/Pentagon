@@ -1,0 +1,197 @@
+{% extends "pentagon/base.html" %}
+
+{% block title %} Admission Form {% endblock title %}
+
+{% block content %}
+  <style>
+    .required:after {
+      content:" *";
+      color: red;
+    }
+  </style>
+
+  <h1 class = "text-primary text-center"> Admission Registration Form </h1>
+  <hr>
+  <br>
+  <div class="card">
+  <div class="card-body">
+    <form>
+      <fieldset>
+        <legend class="text-bg-primary text-center"> Student Details </legend>
+        <div class="row">
+          <div class="col-md-6">
+          <label for="FirstName" class="form-label required">Student First Name</label>
+          <input type="text" class="form-control" id="FirstName" placeholder="First Name" required>
+          </div>
+          <div class="col-md-6">
+            <label for="LastName" class="form-label required">Student Last Name</label>
+            <input type="text" class="form-control" id="LastName" placeholder="Last Name" required>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-6">
+          <label for="DOB" class="form-label required">Student Date of Birth</label>
+          <input type="date" class="form-control" id="DOB" required>
+          </div>
+          <div class="col-md-6">
+            <label for="Nationality" class="form-label required">Nationality</label>
+            <input type="text" class="form-control" id="Nationality" placeholder="Nationality" required>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-6">
+          <label for="MotherTongue" class="form-label required">Mother Tongue</label>
+          <input type="text" class="form-control" id="MotherTongue" placeholder="Mother Tongue" required>
+          </div>
+          <div class="col-md-6">
+            <label for="Religion" class="form-label required">Religion</label>
+            <input type="text" class="form-control" id="Religion" placeholder="Religion" required>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-6">
+            <label for="grade" class="form-label required">Student Grade</label>
+            <select class="form-select" id="grade" required>
+              <option selected>Select Grade</option>
+              <option value="Nursery">Nursery</option>
+              <option value="LKG">LKG</option>
+              <option value="UKG">UKG</option>
+              <option value="1">I</option>
+              <option value="2">II</option>
+              <option value="3">III</option>
+              <option value="4">IV</option>
+              <option value="5">V</option>
+              <option value="6">VI</option>
+              <option value="7">VII</option>
+              <option value="8">VIII</option>
+              <option value="9">IX</option>
+              <option value="10">X</option>
+              <option value="11">XI</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="gender" class="form-label required">Student Gender</label>
+            <select class="form-select" id="gender" required>
+              <option selected>Select Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+        </div>
+      </fieldset>
+      <br>
+      <fieldset>
+        <legend class="text-bg-primary text-center"> Parent Details </legend>
+        <div class="row">
+          <div class="col-md-6">
+          <label for="FatherName" class="form-label required">Father Name</label>
+          <input type="text" class="form-control" id="FatherName" placeholder="Father Name" required>
+          </div>
+          <div class="col-md-6">
+            <label for="MotherName" class="form-label required">Mother Name</label>
+            <input type="text" class="form-control" id="MotherName" placeholder="Mother Name" required>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-6">
+          <label for="FatherQual" class="form-label required">Father's Qualification</label>
+          <input type="text" class="form-control" id="FatherQual" placeholder="Qualification" required>
+          </div>
+          <div class="col-md-6">
+            <label for="MotherQual" class="form-label required">Mother's Qualification</label>
+            <input type="text" class="form-control" id="MotherQual" placeholder="Qualification" required>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-6">
+          <label for="FatherOccu" class="form-label required">Father's Occupation</label>
+          <input type="text" class="form-control" id="FatherOccu" placeholder="Occupation" required>
+          </div>
+          <div class="col-md-6">
+            <label for="MotherOccu" class="form-label required">Mother's Occupation</label>
+            <input type="text" class="form-control" id="MotherOccu" placeholder="Occupation" required>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-6">
+          <label for="FatherDesig" class="form-label required">Father's Designation</label>
+          <input type="text" class="form-control" id="FatherDesig" placeholder="Designation" required>
+          </div>
+          <div class="col-md-6">
+            <label for="MotherDesig" class="form-label required">Mother's Designation</label>
+            <input type="text" class="form-control" id="MotherDesig" placeholder="Designation" required>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-6">
+          <label for="FatherOrg" class="form-label required">Father's Organisation's Name and Address </label>
+          <input type="text" class="form-control" id="FatherOrg" placeholder="Organisation" required>
+          </div>
+          <div class="col-md-6">
+            <label for="MotherOrg" class="form-label required">Mother's Organisation's Name and Address</label>
+            <input type="text" class="form-control" id="MotherOrg" placeholder="Organisation" required>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-6">
+          <label for="FatherMobile" class="form-label required">Father's Mobile Number</label>
+          <input type="tel" pattern="[0-9]{10}" class="form-control" id="FatherMobile" placeholder="Mobile Number" maxlength="10" required>
+          </div>
+          <div class="col-md-6">
+            <label for="MotherMobile" class="form-label required">Mother's Mobile Number</label>
+            <input type="tel" pattern="[0-9]{10}" class="form-control" id="MotherMobile" placeholder="Mobile Number" maxlength="10" required>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-6">
+          <label for="Res1" class="form-label">Residential Number 1</label>
+          <input type="tel" pattern="[0-9]{10}" class="form-control" id="Res1" placeholder="Residential Number" maxlength="10">
+          </div>
+          <div class="col-md-6">
+            <label for="Res2" class="form-label">Residential Number 2</label>
+            <input type="tel" pattern="[0-9]{10}" class="form-control" id="Res2" placeholder="Residential Number" maxlength="10">
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-6">
+          <label for="FatherEmail" class="form-label required">Father's Email ID </label>
+          <input type="email" class="form-control" id="FatherEmail" placeholder="Email ID" required>
+          </div>
+          <div class="col-md-6">
+            <label for="MotherEmail" class="form-label required">Mother's Email ID</label>
+            <input type="email" class="form-control" id="MotherEmail" placeholder="Email ID" required> 
+          </div>
+        </div>
+        <br>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend class="text-bg-primary text-center">Residential Details</legend>
+        <div class="row">
+          <div class="col-md-6">
+            <label for="Address" class="form-label required">Address</label>
+            <input type="text" class="form-control" id="Address" placeholder="Address" required>
+          </div>
+          <div class="col-md-6">
+            <label for="Pincode" class="form-label required">Pincode</label>
+            <input type="text" class="form-control" id="Pincode" placeholder="Pincode" required>
+          </div>
+        </div>
+      </fieldset>
+    <br> 
+  <button type="submit" class="btn btn-outline-primary" style="width: 20rem">Submit</button>
+  </div>
+</form>
+</div>
+{% endblock content %}

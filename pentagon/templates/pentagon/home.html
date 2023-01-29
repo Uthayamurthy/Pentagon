@@ -1,0 +1,9 @@
+{% extends "pentagon/base.html" %}
+
+{% block title %} Home {% endblock title %}
+
+{% block content %}
+  <h2 class="text-dark"> Home Page </h2>
+  <br>
+  <a class="btn btn-outline-primary" href={% url 'pentagon:guidelines' %} role="button">New Admission</a>
+{% endblock content %}

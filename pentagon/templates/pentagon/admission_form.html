@@ -1,0 +1,142 @@
+{% extends "pentagon/base.html" %}
+{% load crispy_forms_tags %}
+{% block title %} Admission Form {% endblock title %}
+
+{% block content %}
+<h1 class = "text-primary text-center"> Admission Registration Form </h1>
+<hr>
+<br>
+<!-- {{ form.first_name|as_crispy_field }} -->
+<form method="post">
+{% csrf_token %}
+<div class="card bg-light">
+   <div class="card-body">
+     <form>
+       <fieldset>
+         <legend class="text-white bg-primary text-center"> Student Details </legend>
+         <div class="row">
+           <div class="col-md-6">
+            {{ form.first_name|as_crispy_field }}
+           </div>
+           <div class="col-md-6">
+            {{ form.last_name|as_crispy_field }}
+           </div>
+         </div>
+         <br>
+         <div class="row">
+           <div class="col-md-6">
+            {{ form.dob|as_crispy_field }}
+           </div>
+           <div class="col-md-6">
+            {{ form.nationality|as_crispy_field }}
+           </div>
+         </div>
+         <br>
+         <div class="row">
+           <div class="col-md-6">
+            {{ form.mother_tongue|as_crispy_field }}
+           </div>
+           <div class="col-md-6">
+            {{ form.religion|as_crispy_field }}
+           </div>
+         </div>
+         <br>
+         <div class="row">
+           <div class="col-md-6">
+            {{ form.grade|as_crispy_field }}
+           </div>
+           <div class="col-md-6">
+            {{ form.gender|as_crispy_field }}
+           </div>
+           <div class="col-md-6">
+            {{ form.place_of_birth|as_crispy_field }}
+           </div>
+         </div>
+       </fieldset>
+       <br>
+       <fieldset>
+         <legend class="text-white bg-primary text-center"> Parent Details </legend>
+         <div class="row">
+           <div class="col-md-6">
+            {{ form.father_name|as_crispy_field }}
+           </div>
+           <div class="col-md-6">
+            {{ form.mother_name|as_crispy_field }}
+           </div>
+         </div>
+         <br>
+         <div class="row">
+           <div class="col-md-6">
+            {{ form.father_qualification|as_crispy_field }}
+           </div>
+           <div class="col-md-6">
+            {{ form.mother_qualification|as_crispy_field }}
+           </div>
+         </div>
+         <br>
+         <div class="row">
+           <div class="col-md-6">
+            {{ form.father_occupation|as_crispy_field }}
+           </div>
+           <div class="col-md-6">
+            {{ form.mother_occupation|as_crispy_field }}
+           </div>
+         </div>
+         <br>
+         <div class="row">
+           <div class="col-md-6">
+            {{ form.father_designation|as_crispy_field }}
+           </div>
+           <div class="col-md-6">
+            {{ form.mother_designation|as_crispy_field }}
+           </div>
+         </div>
+         <br>
+         <div class="row">
+           <div class="col-md-6">
+            {{ form.father_organisation|as_crispy_field }}
+           </div>
+           <div class="col-md-6">
+            {{ form.mother_organisation|as_crispy_field }}
+           </div>
+         </div>
+         <br>
+         <div class="row">
+           <div class="col-md-6">
+            {{ form.father_mobile|as_crispy_field }}
+           </div>
+           <div class="col-md-6">
+            {{ form.mother_mobile|as_crispy_field }}
+           </div>
+         </div>
+         <div class="row">
+           <div class="col-md-6">
+            {{ form.father_email|as_crispy_field }}
+           </div>
+           <div class="col-md-6">
+            {{ form.mother_email|as_crispy_field }} 
+           </div>
+         </div>
+         <br>
+ 
+       </fieldset>
+ 
+       <fieldset>
+         <legend class="text-white bg-primary text-center">Residential Details</legend>
+         <div class="row">
+           <div class="col-md-6">
+            {{ form.address|as_crispy_field }}
+            </div>
+           <div class="col-md-6">
+            {{ form.pincode|as_crispy_field }}
+           </div>
+         </div>
+       </fieldset>
+     <br>
+     <p class="text-dark"> Captcha </p>
+     {{form.captcha}} 
+     <br><br>
+   <button type="submit" class="btn btn-outline-primary" style="width: 20rem">Submit</button>
+</div>
+</form>
+{% endblock content %}

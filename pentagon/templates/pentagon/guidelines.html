@@ -1,0 +1,45 @@
+{% extends "pentagon/base.html" %}
+
+{% block title %} Guidelines {% endblock title %}
+
+{% block content %}
+  <h2 class="text-center text-primary"> Guidelines For Online Admission </h2>
+  <h4 class="text-center text-secondary text-opacity-75"> 2022-23 </h4>
+  <hr>
+  <br>
+
+  <div class="alert  alert-primary d-flex align-items-center" role="alert">
+    Kindly read all the instructions carefully before you click on Proceed at the bottom of this page.
+  </div>
+  <br>
+  <div class="card text-white bg-primary mb-3" style="width: 100%">
+    <div class="card-header text-center fw-semibold">Guidelines</div>
+    <div class="card-body">
+    <ol class="list-group list-group-numbered">
+      <li class="list-group-item text-white bg-primary"> It is mandatory to have a valid personal email if communication. </li>
+      <li class="list-group-item text-white bg-primary"> Kindly fill in the particulars of the child (i.e name, parent's names and date of birth) correctly. </li>
+      <li class="list-group-item text-white bg-primary"> The date of birth filled in the form must tally with the birth certificate of the child. </li>
+      <li class="list-group-item text-white bg-primary"> The Management of the school reserves all rights of admission or rejection and it is not bound to give reasons for the admission or rejection of any particular candidate. </li>
+      <li class="list-group-item text-white bg-primary"> Incomplete registration forms or those with incorrect information will automatically stand rejected. </li>
+    </ol>
+    </div>
+    </div>
+    <br>
+    <form class="bg-light" action="{% url 'pentagon:guidelines_verify' %}" method="post">
+    {% csrf_token %}
+    <fieldset>
+    &nbsp; I hereby agree that I have read all the Guidelines. I also acknowledge to be contacted by the school management for any further details.
+    <div class="form-check">
+        &nbsp;
+        <input class="form-check-input" type="checkbox" name="agree" value="agreed" id="agreecheckbox">
+        <label class="form-check-label text-success" for="agreecheckbox">
+            I Agree
+        </label>
+    </div>
+    <br>
+    {% if error_message %}<div class="alert alert-warning">{{ error_message }}</div>{% endif %}
+    <button type="submit" class="btn btn-outline-success">Next</button> 
+    </fieldset>
+    </form>
+
+{% endblock content %}
